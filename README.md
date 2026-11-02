@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # exam-app manifests (single source of truth)
 
 Argo CD watches this repo. Whatever is on `main` is what runs in the cluster.
@@ -41,3 +42,6 @@ Argo CD syncs automatically.
 - Build the frontend image with `VITE_API_URL=/api` so it calls the backend through the ingress.
 - Ingress class is `nginx`. On k3s (Traefik) change `ingressClassName` in both `ingress.yaml` files.
 - Private registry images need an `imagePullSecret` (commented out in both deployments).
+=======
+# My-app-repo
+>>>>>>> a10d21d329e4ab486eef662acb847eedbeabdd7b
