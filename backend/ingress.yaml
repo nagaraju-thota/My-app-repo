@@ -1,0 +1,19 @@
+# Routes /api to the backend. The frontend folder has its own Ingress for "/".
+# Both use the same (empty) host, so the controller merges them into one site.
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: backend
+  namespace: exam-app
+spec:
+  ingressClassName: nginx        # k3s ships Traefik: use "traefik" instead
+  rules:
+    - http:
+        paths:
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: backend
+                port:
+                  number: 5000

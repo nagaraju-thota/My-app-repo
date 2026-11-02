@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: exam-app
+resources:
+  - deployment.yaml
+  - service.yaml
+  - ingress.yaml
+# The CI pipeline pushes <dockerhub-username>/backend-my-app-backend:<7-char-sha>.
+# Update newName/newTag here (or run `kustomize edit set image`) to roll out a new build.
+images:
+  - name: DOCKERHUB_USERNAME/backend-my-app-backend
+    newName: DOCKERHUB_USERNAME/backend-my-app-backend
+    newTag: CHANGE_ME

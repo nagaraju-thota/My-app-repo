@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: exam-app
+  labels:
+    app: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      # If your Docker Hub / GHCR image is PRIVATE, create a pull secret and uncomment:
+      # imagePullSecrets:
+      #   - name: regcred
+      containers:
+        - name: backend
+          # Image name/tag are overridden by kustomization.yaml (images: section)
+          image: DOCKERHUB_USERNAME/backend-my-app-backend:TAG
+          ports:
+            - containerPort: 5000
+          env:
+            - name: PORT
+              value: "5000"
+          envFrom:
+            - secretRef:
+                name: backend-secret        # holds DATABASE_URL (see secret.example.yaml)
+          readinessProbe:
+            httpGet:
+              path: /api/health
+              port: 5000
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /api/health
+              port: 5000
+            initialDelaySeconds: 30
+            periodSeconds: 20
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi

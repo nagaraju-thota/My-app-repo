@@ -1,0 +1,19 @@
+# Routes "/" to the frontend. The backend folder has its own Ingress for "/api"
+# (the longer path wins, so /api requests still reach the backend).
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: frontend
+  namespace: exam-app
+spec:
+  ingressClassName: nginx        # k3s ships Traefik: use "traefik" instead
+  rules:
+    - http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: frontend
+                port:
+                  number: 80
