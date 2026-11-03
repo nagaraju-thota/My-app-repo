@@ -9,5 +9,5 @@ resources:
 # Update newName/newTag here (or run `kustomize edit set image`) to roll out a new build.
 images:
   - name: DOCKERHUB_USERNAME/backend-my-app-backend
-    newName: DOCKERHUB_USERNAME/backend-my-app-backend
-    newTag: CHANGE_ME
+    newName: nagaraju630/backend-my-app-backend
+    newTag: 20b3ea2
