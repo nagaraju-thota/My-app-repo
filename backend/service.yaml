@@ -6,11 +6,10 @@ metadata:
   labels:
     app: backend
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: backend
   ports:
     - name: http
       port: 5000
       targetPort: 5000
-      nodePort: 30500        # must be between 30000 and 32767
