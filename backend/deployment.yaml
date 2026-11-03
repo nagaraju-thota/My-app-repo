@@ -21,7 +21,7 @@ spec:
       containers:
         - name: backend
           # Image name/tag are overridden by kustomization.yaml (images: section)
-          image: DOCKERHUB_USERNAME/backend-my-app-backend:TAG
+          image: nagaraju630/backend-my-app-backend:20b3ea2
           ports:
             - containerPort: 5000
           env:
