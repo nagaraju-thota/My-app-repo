@@ -10,4 +10,4 @@ resources:
 images:
   - name: DOCKERHUB_USERNAME/backend-my-app-backend
     newName: nagaraju630/backend-my-app-backend
-    newTag: "cf348c9"
+    newTag: "5365f8d"
