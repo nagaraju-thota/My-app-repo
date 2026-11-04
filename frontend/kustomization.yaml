@@ -7,5 +7,5 @@ resources:
   - ingress.yaml
 images:
   - name: DOCKERHUB_USERNAME/frontend-my-app-frontend
-    newName: DOCKERHUB_USERNAME/frontend-my-app-frontend
-    newTag: CHANGE_ME
+    newName: nagaraju630/frontend-my-app-frontend
+    newTag: 3a8e852
