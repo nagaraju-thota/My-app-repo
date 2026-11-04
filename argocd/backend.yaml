@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/YOUR_GITHUB_USER/YOUR_MANIFEST_REPO.git   # <- this repo
+    repoURL: https://github.com/nagaraju-thota/My-app-repo.git   # <- this repo
     targetRevision: main
     path: backend
   destination:
