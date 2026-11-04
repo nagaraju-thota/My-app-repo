@@ -21,17 +21,17 @@ spec:
         - name: frontend
           image: DOCKERHUB_USERNAME/frontend-my-app-frontend:TAG
           ports:
-            - containerPort: 80          # nginx (EXPOSE 80 in the Dockerfile)
+            - containerPort: 8080          # nginx (EXPOSE 80 in the Dockerfile)
           readinessProbe:
             httpGet:
               path: /
-              port: 80
+              port: 8080
             initialDelaySeconds: 5
             periodSeconds: 10
           livenessProbe:
             httpGet:
               path: /
-              port: 80
+              port: 8080
             initialDelaySeconds: 15
             periodSeconds: 20
           resources:
