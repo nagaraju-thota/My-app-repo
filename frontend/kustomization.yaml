@@ -8,4 +8,4 @@ resources:
 images:
   - name: DOCKERHUB_USERNAME/frontend-my-app-frontend
     newName: nagaraju630/frontend-my-app-frontend
-    newTag: 3a8e852
+    newTag: "7f58d61"
